@@ -1,7 +1,15 @@
 #include <iostream>
+#include "board.hpp"
 
 int main(){
 
-    std::cout << "Hello \n World" << std::endl;
+    Board board;
+    for (size_t i = 0; i < BOARD_SIZE; i++)
+    {
+        std::cout << i << ": ";
+        board.getFigure(i).debug_print();
+        std::cout << std::endl;
+    }
 
+    return 0;
 }
