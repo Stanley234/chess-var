@@ -1,7 +1,7 @@
 #include "figure.hpp"
 
-void Figure::debug_print(){
-    std::cout << "pos:" << pos << "  - val:" << val;
+void Figure::debugPrint(){
+    std::cout << "pos:\t" << pos << "\tval:\t" << val;
 }
 
 Figure::Figure(){
@@ -9,7 +9,20 @@ Figure::Figure(){
     val = 0;
 }
 
-Figure::Figure(uint8_t v){
-    pos = 0;
+Figure::Figure(int p){
+    pos = p;
+    val = 0;
+}
+
+Figure::Figure(int p, int v){
+    pos = p;
     val = v;
+}
+
+void Figure::setValue(int v){
+    val = v;
+}
+
+void Figure::setPosition(int p){
+    pos = p;
 }

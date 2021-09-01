@@ -1,10 +1,10 @@
 #pragma once
 
 #define BOARD_LENGTH 8
-#define BOARD_WIDTH BOARD_LENGTH
-#define BOARD_SIZE BOARD_LENGTH*BOARD_WIDTH
+#define BOARD_SIZE BOARD_LENGTH*BOARD_LENGTH
 
-#include <cstdint>
+#include <iostream>
+#include <array>
 #include "figure.hpp"
 
 
@@ -12,11 +12,14 @@ class Board{
 
 public:
     Board();
+    ~Board();
 
-    Figure& getFigure(uint8_t idx){ return p_board[idx]; }
-    void setFigure(uint8_t idx, Figure fig){ p_board[idx] = fig; }
+    Figure& getFigure(int);
+    void setFigure(int, Figure);
 
+    void moveFigure(int,int);
+    void debugPrint();
 private:
     // Using as 1 dim array to prevent overly complex pointers
-    Figure p_board[BOARD_SIZE];
+    std::array<Figure, BOARD_SIZE> p_board;
 };

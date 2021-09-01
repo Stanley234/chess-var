@@ -1,16 +1,28 @@
 #pragma once
 #include <iostream>
-#include <cstdint>
+#include <vector>
+#include "movement.hpp"
 
 class Figure{
 
 public:
     Figure();
-    Figure(uint8_t);
+    Figure(int);
+    Figure(int, int);
 
-    void debug_print();
+
+    void setValue(int);
+    void setPosition(int);
+
+    void addMove(Movement);
+    void calcMove();
+
+
+    void debugPrint();
 
 private:
-    uint8_t pos;
-    uint8_t val;
+    int pos;
+    int val;
+
+    std::vector<Movement> legal_move;
 };
