@@ -1,0 +1,8 @@
+TODO List:
+
+Change board class to an actual board (64 spaces)
+Create class <game> or sth to replace current functions in board.hpp
+Create differant movetypes (maybe as enum) that return a vector of movements
+Create for class <game> a way to load the starting chess board
+Calculation of legal moves with help of movetypes and board
+Create class for visualising board (terminal and eventually gfx)
